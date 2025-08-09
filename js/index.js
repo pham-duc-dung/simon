@@ -19,37 +19,14 @@ $(document).on("keydown", function () {
     }
 });
 
-$("#green").on("click", function () {
+$(".square").on("click", function () {
+    var userChosenColor = $(this).attr("id");
     if (isStarted()) {
-        showClickEffect("green");
-        userClickedPattern.push("green");
+        showClickEffect(userChosenColor);
+        userClickedPattern.push(userChosenColor);
         checkAnswer();
     }
 
-});
-
-$("#red").on("click", function () {
-    if (isStarted()) {
-        showClickEffect("red");
-        userClickedPattern.push("red");
-        checkAnswer();
-    }
-});
-
-$("#blue").on("click", function () {
-    if (isStarted()) {
-        showClickEffect("blue");
-        userClickedPattern.push("blue");
-        checkAnswer();
-    }
-});
-
-$("#yellow").on("click", function () {
-    if (isStarted()) {
-        showClickEffect("yellow");
-        userClickedPattern.push("yellow");
-        checkAnswer();
-    }
 });
 
 function isStarted() {
@@ -126,7 +103,7 @@ function checkAnswer() {
         }
     }
     if (gamePattern.length === userClickedPattern.length) {
-        levelUp();
+        level++;
         clearUserClickedPattern();
         setTimeout(function () { showTitle() }, 500);
         setTimeout(function () { showNextColor() }, 1000);
@@ -141,10 +118,6 @@ function showWrongKey() {
     }, 200);
     var audio = new Audio('sounds/wrong_key.mp3');
     audio.play();
-}
-
-function levelUp() {
-    level++;
 }
 
 function clearUserClickedPattern() {
