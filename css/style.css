@@ -36,23 +36,32 @@ h1 {
     border-style: solid;
 }
 
-@media screen and (max-width: 375px) {
-    h1 {
-    font-size: 2rem;
-}
-
+@media screen and (max-width: 576px) {
     .game-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 10px;
     }
 
     .square {
         margin: 0px;
         padding: 0px;
-        width: 30vw;
-        height: 30vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .square {
+        width: 35vw;
+        height: 35vw;
     }
 }
 
