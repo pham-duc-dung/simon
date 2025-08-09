@@ -25,22 +25,38 @@ h1 {
     grid-template-columns: 1fr 1fr;
 }
 
-@media screen and (max-width: 992px) {
-    .game-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 .square {
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    width: 40vw;
+    height: 40vw;
     margin: 17px;
     border-radius: 20%;
     border-width: 10px;
     border-style: solid;
 }
+
+@media screen and (max-width: 375px) {
+    h1 {
+    font-size: 2rem;
+}
+
+    .game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .square {
+        margin: 0px;
+        padding: 0px;
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+
 
 .red {
     background-color: #ff0000;
@@ -64,5 +80,6 @@ h1 {
 
 .clicked {
     /* glowing effect */
-    box-shadow: 0 0 20px #0ff;    /* outer glow */
+    box-shadow: 0 0 20px #0ff;
+    /* outer glow */
 }
